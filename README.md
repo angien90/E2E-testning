@@ -40,16 +40,22 @@ Uppgiften examinerar följande moment från kursplanen:
 
 
 # Uppgiftsanteckningar
+## Printbilder från Cypress
+ 
+![Exempelbild](public/App.png)
+App.cy.js
 
-## Lista över tester i applikationen 
+![Exempelbild](public/HabitForm.png)
+HabitForm.cy.js
 
-* 
+![Exempelbild](public/HabitItem.png)
+HabitItem.cy.js
 
-### Shields.io
+![Exempelbild](public/HabitList.png)
+HabitList.cy.js
 
-Badge som visar om tester passerar
-
-![Vitest](https://img.shields.io/github/workflow/status/<user>/<repo>/Run%20Vitest?label=Vitest)
+![Exempelbild](public/HabitTracker.png)
+HabitTracker.cy.js
 
 
 ## Installation av projektet  
@@ -64,7 +70,7 @@ npm install vue-router
 #### Installation av Cypress
 1. npm add --save-dev cypress
 2. Lade till "cypress": "cypress open" i package.json under script.
-3. npm run cypress
+3. npx cypress open
 
 #### Kör projektet
 1. npm install

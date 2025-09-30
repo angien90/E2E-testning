@@ -30,11 +30,11 @@ const submit = () => {
 
 <template>
   <form @submit.prevent="submit">
-    <input v-model="name" placeholder="Ny vana" required />
-    <select class="frequency" v-model="frequency">
+    <input v-model="name" name="name" placeholder="Ny vana" required />
+    <select class="frequency" name="frequency" v-model="frequency">
       <option>dagligen</option>
       <option>veckovis</option>
-      <option>månatligen</option>
+      <option>månadsvis</option>
     </select>
     <button type="submit">{{ editMode ? 'Spara' : 'Lägg till' }}</button>
   </form>
