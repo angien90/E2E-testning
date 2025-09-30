@@ -1,5 +1,71 @@
-# Vue 3 + Vite
+# Inlämning 2 i kursen Testning - E2E
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Uppgiften examinerar följande moment från kursplanen:
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+* Tekniker för att kvalitetssäkra kod
+* Hur testverktyg kan användas
+* Genomföra End-to-end-tester för att upptäcka och åtgärda buggar
+
+## Uppgiftsbeskrivning
+* Din uppgift är att skapa en enkel to do-app i valfritt ramverk, och E2E-testa den.
+* Det går bra att använda färdig kod från tidigare projekt/internet/AI, ta t.ex. hjälp av TodoMVC - ni hittar källkodslänkar till vänster när ni har valt ramverk. Du behöver inte skriva To Do-appen från scratch; fokus är på testning.
+* To do-appen ska innehålla följande funktioner:
+    * Kunna lägga till en todo
+    * Kunna ta bort en todo, men endast om den är klar (inte en användarvänlig funktion, men för att kunna skriva ett test som verifierar att detta fungerar)
+    * Kunna markera en todo som klar
+    * Kunna avmarkera en todo som klar
+    *  Ha 2 exempeltodos i listan från början, där en är färdig och den andra ofärdig
+* Skriv tester med hjälp av Cypress för att verifiera att flödet fungerar:
+    * Applikationen startar/visar något (mount)
+    * Det finns 2 uppgifter där en är klar och den andra inte är det
+    * Det går att lägga till en todo
+    * Det går att ta bort en todo
+    * Det går att "toggla state" för todon
+* Göra en (utförlig) README till ditt repo som demonstrerar dina resultat, inkl. skärmdumpar på samtliga tester (att de har gått igenom).
+
+#### Syfte med uppgiften
+* Förstå hela flödet för testning, från start till mål
+* Kunna använda ett E2E-testverktyg
+* Förstå och fatta beslut kring tekniker för att kvalitetssäkra kod
+* Åtgärda buggar
+
+## Bedömning
+#### För G
+* Du har utfört uppgiften enligt specifikationen ovan
+
+#### För VG
+* Du har utfört uppgiften enligt specifikationen ovan och använt best practices/demonstrerar att du har förståelse för E2E-testning på än högre nivå än G. T.ex. följt konventioner/kodstandarder/osv.
+
+
+
+
+# Uppgiftsanteckningar
+
+## Lista över tester i applikationen 
+
+* 
+
+### Shields.io
+
+Badge som visar om tester passerar
+
+![Vitest](https://img.shields.io/github/workflow/status/<user>/<repo>/Run%20Vitest?label=Vitest)
+
+
+## Installation av projektet  
+#### Initierar projektet
+1. npm init
+2. npm create vite@latest .  
+(Valde Vue och Javascript i detta projekt)
+
+#### Initierar routing på sidan
+npm install vue-router
+
+#### Installation av Cypress
+1. npm add --save-dev cypress
+2. Lade till "cypress": "cypress open" i package.json under script.
+3. npm run cypress
+
+#### Kör projektet
+1. npm install
+2. npm run dev
