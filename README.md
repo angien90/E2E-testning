@@ -33,15 +33,11 @@ Uppgiften examinerar följande moment från kursplanen:
 #### För G
 * Du har utfört uppgiften enligt specifikationen ovan
 
-#### För VG
-* Du har utfört uppgiften enligt specifikationen ovan och använt best practices/demonstrerar att du har förståelse för E2E-testning på än högre nivå än G. T.ex. följt konventioner/kodstandarder/osv.
-
-
 
 
 # Uppgiftsanteckningar
 ## Printbilder från Cypress
- 
+
 ![Exempelbild](public/App.png)
 App.cy.js
 
