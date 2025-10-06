@@ -151,9 +151,15 @@ watch(status, (newVal) => {
 
 /* Responsiv */
 @media (max-width: 480px) {
+  .habit-name,
+  .habit-frequency,
+  .habit-status {
+    text-align: center;
+  }
+  
   .habit-actions {
     width: 100%;
-    justify-content: flex-end;
+    justify-content: center;
   }
 
   .habit-actions .btn {
@@ -161,6 +167,8 @@ watch(status, (newVal) => {
     font-size: 0.9rem;
   }
 
-  .status-select { min-width: 120px; }
+  .status-select { 
+    min-width: 120px; 
+  }
 }
 </style>

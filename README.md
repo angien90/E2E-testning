@@ -37,6 +37,16 @@ Uppgiften examinerar följande moment från kursplanen:
 <br>
 <br>
 
+# Applikationen 
+![Desktop & Tablet](public/Applikationen_desktop_tablet.png)
+
+Hur applikationen ser ut på desktop och tablet
+
+![Mobile](public/Applikationen_mobil.png)
+
+Hur applikationen ser ut på mobilen
+
+
 # Dokumentation av tester
 Detta projekt är en enkel habit tracker byggd med Vue.js. Appen visar hur man kan lägga till, ta bort och markera vanor som klara/icke-klara. Fokus ligger på att skriva och köra E2E-tester med Cypress för att verifiera att alla flöden fungerar som de ska.
 

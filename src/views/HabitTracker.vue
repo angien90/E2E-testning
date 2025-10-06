@@ -6,6 +6,19 @@ import { useHabits } from '../composables/useHabits';
 
 const { habits, addHabit, updateHabit, removeHabit, toggleCompleted, sortHabits } = useHabits();
 
+// Fasta exempelvanor som visas när inga egna vanor är tillagda
+const defaultHabits = [
+  { id: 1, name: "Dricka vatten", status: "Ej implementerad", frequency: "Dagligen" },
+  { id: 2, name: "Meditera 10 min", status: "Börjar implementeras", frequency: "Dagligen" },
+];
+
+// Kolla om vanorna redan finns och lägg till dem annars
+defaultHabits.forEach(defaultHabit => {
+  if (!habits.value.find(h => h.id === defaultHabit.id)) {
+    habits.value.push(defaultHabit);
+  }
+});
+
 // Redigera vana
 const habitToEdit = ref(null);
 const selectedSort = ref(null);
@@ -136,5 +149,12 @@ h1 {
 
 .sort-buttons button:hover {
   background: #388e3c;
+}
+
+/* Responsiv */
+@media (max-width: 480px) {
+  .sort-buttons button {
+    margin-bottom: 5px;
+  }
 }
 </style>
