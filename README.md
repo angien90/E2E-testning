@@ -38,14 +38,13 @@ Uppgiften examinerar följande moment från kursplanen:
 <br>
 
 # Applikationen 
+Även om det inte var ett krav valde jag att skapa applikationen själv. Eftersom jag tidigare har byggt Todo-applikationer, bestämde jag mig denna gång för att göra en “habit-tracker” istället.
+
+#### Applikationen på desktop och tablet:
 ![Desktop & Tablet](public/Applikationen_desktop_tablet.png)
 
-Hur applikationen ser ut på desktop och tablet
-
+#### Applikationen på en mobil:
 ![Mobile](public/Applikationen_mobil.png)
-
-Hur applikationen ser ut på mobilen
-
 
 # Dokumentation av tester
 Detta projekt är en enkel habit tracker byggd med Vue.js. Appen visar hur man kan lägga till, ta bort och markera vanor som klara/icke-klara. Fokus ligger på att skriva och köra E2E-tester med Cypress för att verifiera att alla flöden fungerar som de ska.
@@ -58,22 +57,20 @@ Detta projekt är en enkel habit tracker byggd med Vue.js. Appen visar hur man k
 * Sortera på vana, datum och status
 
 ## Skärmdumpar från Cypress
-
+#### App.cy.js - Säkerställa att App.vue renderas korrekt
 ![App.cy.js](public/App.png)
-App.cy.js - Säkerställa att App.vue renderas korrekt
 
+#### HabitForm.cy.js - Säkerställer att man kan skriva in en ny vana och att formuläret fungerar som det ska.
 ![HabitForm.cy.js](public/HabitForm.png)
-HabitForm.cy.js - Säkerställer att man kan skriva in en ny vana och att formuläret fungerar som det ska.
 
+#### HabitItem.cy.js - Testar att det går att ändra vanor, toggla status och ta bort en vana.
 ![HabitItem.cy.js](public/HabitItem.png)
-HabitItem.cy.js - Testar att det går att ändra vanor, toggla status och ta bort en vana.
 
+#### HabitList.cy.js - Renderar alla vanor och hanterar events från HabitItem.
 ![HabitList.cy.js](public/HabitList.png)
-HabitList.cy.js - Renderar alla vanor och hanterar events från HabitItem.
 
+#### HabitTracker.cy.js - Testar hela habit-flödet (UI, interaktion och event-hantering).
 ![HabitTracker.cy.js](public/HabitTracker.png)
-HabitTracker.cy.js - Testar hela habit-flödet (UI, interaktion och event-hantering).
-
 
 ## Installation och körning   
 #### Initiera projektet
