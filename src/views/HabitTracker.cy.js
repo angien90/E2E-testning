@@ -73,7 +73,7 @@ describe('<HabitTracker />', () => {
     cy.get('form').submit()
 
     // Klicka sortera på namn
-    cy.contains('Sortera på namn').click()
+    cy.contains('Sortera på vana').click()
 
     // Kontrollera att första habit-item är "Andas"
     cy.get('.habit-list .habit-item').first().should('contain', 'Andas')

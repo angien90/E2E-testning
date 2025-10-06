@@ -55,7 +55,7 @@ const implementedHabits = computed(() =>
       <div class="habit-header">
         <h2>Följ upp dina vanor</h2>
         <div class="sort-buttons">
-          <button @click="doSort('name')" :class="{ active: selectedSort === 'name' }">Sortera på namn</button>
+          <button @click="doSort('name')" :class="{ active: selectedSort === 'name' }">Sortera på vana</button>
           <button @click="doSort('date')" :class="{ active: selectedSort === 'date' }">Sortera på datum</button>
           <button @click="doSort('status')" :class="{ active: selectedSort === 'status' }">Sortera på status</button>
         </div>
