@@ -7,14 +7,26 @@ const props = defineProps({
 
 const emit = defineEmits(['edit', 'remove', 'update']);
 
-// initiera status från habit
+// Status och felmeddelande
 const status = ref(props.habit.status ?? 'Ej implementerad');
+const errorMessage = ref('');
 
-// uppdatera habit-objektet när status ändras
+// Uppdatera habit när status ändras
 watch(status, (newVal) => {
   const updated = { ...props.habit, status: newVal };
   emit('update', updated);
+  errorMessage.value = '';
 });
+
+// Ta bort-vana
+function removeHabit() {
+  if (status.value === 'Implementerad') {
+    emit('remove', props.habit.id);
+    errorMessage.value = '';
+  } else {
+    errorMessage.value = 'Endast färdiga vanor kan tas bort';
+  }
+}
 </script>
 
 <template>
@@ -23,7 +35,13 @@ watch(status, (newVal) => {
       <span class="habit-name">{{ habit.name }}</span>
       <div class="habit-actions">
         <button class="btn edit" @click="$emit('edit', habit.id)">Ändra</button>
-        <button class="btn remove" @click="$emit('remove', habit.id)">Ta bort</button>
+        <button 
+          class="btn remove" 
+          :disabled="status !== 'Implementerad'" 
+          @click="removeHabit"
+        >
+          Ta bort
+        </button>
       </div>
     </div>
 
@@ -39,6 +57,9 @@ watch(status, (newVal) => {
         <option>Implementerad</option>
       </select>
     </div>
+
+    <!-- Felmeddelande -->
+    <div v-if="errorMessage" class="error-message">{{ errorMessage }}</div>
   </div>
 </template>
 
@@ -102,13 +123,30 @@ watch(status, (newVal) => {
   background: #42a5f5;
   color: white;
 }
-.btn.edit:hover { background: #1e88e5; }
+.btn.edit:hover { 
+background: #1e88e5; 
+}
 
 .btn.remove {
   background: #ef5350;
   color: white;
 }
-.btn.remove:hover { background: #c62828; }
+
+.btn.remove:hover { 
+background: #c62828; 
+}
+
+.btn.remove:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.error-message {
+  margin-top: 0.5rem;
+  color: #ef5350;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
 
 /* Frekvensrad */
 .habit-frequency {

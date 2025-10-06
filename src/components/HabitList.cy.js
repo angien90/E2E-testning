@@ -17,8 +17,16 @@ describe('<HabitList />', () => {
     cy.mount(HabitList, {
       props: { habits, onRemove: cy.spy().as('onRemove') }
     })
-    cy.get('.habit-item').first().find('.btn.remove').click()
-    cy.get('@onRemove').should('have.been.calledWith', 1)
+
+    // Välj habit som är Implementerad (id: 2)
+    cy.get('.habit-item')
+      .contains('Springa')
+      .closest('.habit-item')
+      .find('.btn.remove')
+      .should('not.be.disabled')
+      .click()
+
+    cy.get('@onRemove').should('have.been.calledWith', 2)
   })
 
   it('emittar edit när ett HabitItem triggar edit', () => {

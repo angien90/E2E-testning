@@ -22,11 +22,26 @@ describe('<HabitItem />', () => {
     cy.get('@onEdit').should('have.been.calledWith', baseHabit.id)
   })
 
-  it('emittar remove-event när man klickar på ta bort-knappen', () => {
+  it('ta bort-knappen är inaktiv om status inte är Implementerad', () => {
+    cy.mount(HabitItem, { props: { habit: baseHabit } })
+    cy.get('.btn.remove').should('be.disabled')
+  })
+
+  it('visar felmeddelande om man försöker ta bort en vana som ej är klar', () => {
+    cy.mount(HabitItem, { props: { habit: baseHabit } })
+    cy.get('.btn.remove')
+      .invoke('removeAttr', 'disabled') // endast för test
+      .click()
+    cy.contains('Endast färdiga vanor kan tas bort').should('exist')
+  })
+
+  it('emittar remove-event när status är Implementerad', () => {
     cy.mount(HabitItem, {
-      props: { habit: baseHabit, onRemove: cy.spy().as('onRemove') }
+      props: { habit: { ...baseHabit, status: 'Implementerad' }, onRemove: cy.spy().as('onRemove') }
     })
-    cy.get('.btn.remove').click()
+    cy.get('.btn.remove')
+      .should('not.be.disabled')
+      .click()
     cy.get('@onRemove').should('have.been.calledWith', baseHabit.id)
   })
 

@@ -63,16 +63,16 @@ Detta projekt är en enkel habit tracker byggd med Vue.js. Appen visar hur man k
 App.cy.js - Säkerställa att App.vue renderas korrekt
 
 ![HabitForm.cy.js](public/HabitForm.png)
-HabitForm.cy.js - Skriver in en ny vana för att se att det fungerar som det ska.
+HabitForm.cy.js - Säkerställer att man kan skriva in en ny vana och att formuläret fungerar som det ska.
 
 ![HabitItem.cy.js](public/HabitItem.png)
-HabitItem.cy.js - Testar att ändrar vanor, togglar status och ta bort en vana.
+HabitItem.cy.js - Testar att det går att ändra vanor, toggla status och ta bort en vana.
 
 ![HabitList.cy.js](public/HabitList.png)
 HabitList.cy.js - Renderar alla vanor och hanterar events från HabitItem.
 
 ![HabitTracker.cy.js](public/HabitTracker.png)
-HabitTracker.cy.js - Testar hela habit-flödet (Renderar huvudkomponenten, lägger till, togglar och tar bort vanor).
+HabitTracker.cy.js - Testar hela habit-flödet (UI, interaktion och event-hantering).
 
 
 ## Installation och körning   

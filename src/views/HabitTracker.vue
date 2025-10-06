@@ -9,7 +9,7 @@ const { habits, addHabit, updateHabit, removeHabit, toggleCompleted, sortHabits 
 // Fasta exempelvanor som visas när inga egna vanor är tillagda
 const defaultHabits = [
   { id: 1, name: "Dricka vatten", status: "Ej implementerad", frequency: "Dagligen" },
-  { id: 2, name: "Meditera 10 min", status: "Börjar implementeras", frequency: "Dagligen" },
+  { id: 2, name: "Meditera 10 min", status: "Implementerad", frequency: "Dagligen" },
 ];
 
 // Kolla om vanorna redan finns och lägg till dem annars
@@ -88,6 +88,7 @@ const implementedHabits = computed(() =>
         <h2>Implementerade vanor</h2>
       </div>
       <HabitList 
+        v-if="implementedHabits.length"
         :habits="implementedHabits" 
         @update="updateHabit" 
         @remove="removeHabit" 
