@@ -3,11 +3,14 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://angien90.github.io/E2E-testning",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "cypress": "cypress open"
+    "cypress": "cypress open",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "vue": "^3.5.21",
@@ -16,6 +19,7 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.1",
     "cypress": "^15.3.0",
+    "gh-pages": "^6.3.0",
     "vite": "^7.1.7"
   }
 }
